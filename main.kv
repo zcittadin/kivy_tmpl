@@ -1,0 +1,69 @@
+<RootElement>:
+    orientation: 'vertical'
+    MyNavigator:
+        id: navigator
+        Home:
+            name: 'home'
+        Manual:
+            name: 'manual'
+        Config:
+            name: 'config'
+        Reports:
+            name: 'reports'
+    MyNavBar:
+        Button:
+            text: 'Home'
+            on_release: root.ids.navigator.current = 'home'
+        Button:
+            text: 'Manual'
+            on_release: root.ids.navigator.current = 'manual'
+        Button:
+            text: 'Settings'
+            on_release: root.ids.navigator.current = 'config'
+        Button:
+            text: 'Reports'
+            on_release: root.ids.navigator.current = 'reports'
+
+<Home>:
+    BoxLayout:
+    	orientation: 'vertical'
+    	padding: 100
+    	spacing: 10
+        Label:
+            text: 'Home'
+            font_size: '40sp'
+            bold:  True
+            color: [0,1.0,0,1.0]
+
+<Manual>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 100
+        spacing: 10
+        Label:
+            text: 'Manual'
+            font_size: '40sp'
+            bold:  True
+            color: [0,0,1.0,1.0]
+
+<Config>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 100
+        spacing: 10
+        Label:
+            text: 'Config'
+            font_size: '40sp'
+            bold:  True
+            color: [1.0,0,0,1.0]
+
+<Reports>:
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 100
+        spacing: 10
+        Label:
+            text: 'Reports'
+            font_size: '40sp'
+            bold:  True
+            color: [1.0,0,1.0,1.0]
