@@ -1,3 +1,5 @@
+#: import NoTransition kivy.uix.screenmanager.NoTransition
+
 <RootElement>:
     orientation: 'vertical'
     MyNavigator:
@@ -14,22 +16,54 @@
         size_hint_y: None
         Button:
             text: 'Home'
-            on_release: root.ids.navigator.current = 'home'
+            font_size: '20'
+            on_release:
+                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.current = 'home'
+            Image:
+                source: 'images/home.png'
+                y: self.parent.y + self.parent.height - 100
+                x: self.parent.x
         Button:
             text: 'Manual'
-            on_release: root.ids.navigator.current = 'manual'
+            font_size: '20'
+            on_release: 
+                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.current = 'manual'
+            Image:
+                source: 'images/hand.png'
+                y: self.parent.y + self.parent.height - 100
+                x: self.parent.x
         Button:
             text: 'Settings'
-            on_release: root.ids.navigator.current = 'config'
+            font_size: '20'
+            on_release: 
+                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.current = 'config'
+            Image:
+                source: 'images/config.png'
+                y: self.parent.y + self.parent.height - 100
+                x: self.parent.x
         Button:
             text: 'Reports'
-            on_release: root.ids.navigator.current = 'reports'
+            font_size: '20'
+            on_release:
+                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.current = 'reports'
+            Image:
+                source: 'images/report.png'
+                y: self.parent.y + self.parent.height - 100
+                x: self.parent.x
 
 <Home>:
     BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0, 0.5, 0, 0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
     	orientation: 'vertical'
-    	padding: 100
-    	spacing: 10
         Label:
             text: 'Home'
             font_size: '40sp'
@@ -38,9 +72,13 @@
 
 <Manual>:
     BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0.5, 0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
         orientation: 'vertical'
-        padding: 100
-        spacing: 10
         Label:
             text: 'Manual'
             font_size: '40sp'
@@ -49,9 +87,13 @@
 
 <Config>:
     BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0.5, 0, 0, 0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
         orientation: 'vertical'
-        padding: 100
-        spacing: 10
         Label:
             text: 'Config'
             font_size: '40sp'
@@ -60,9 +102,13 @@
 
 <Reports>:
     BoxLayout:
+        canvas.before:
+            Color:
+                rgba: 0.5, 0, 0.5, 0.5
+            Rectangle:
+                pos:self.pos
+                size:self.size
         orientation: 'vertical'
-        padding: 100
-        spacing: 10
         Label:
             text: 'Reports'
             font_size: '40sp'
