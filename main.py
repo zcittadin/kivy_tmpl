@@ -12,7 +12,8 @@ class MyNavigator(ScreenManager):
 	pass
 
 class Home(Screen):
-	pass
+	def printMsg(self):
+		print('GONE!')
 
 class Manual(Screen):
 	pass

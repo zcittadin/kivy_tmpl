@@ -1,4 +1,4 @@
-#: import NoTransition kivy.uix.screenmanager.NoTransition
+#: import SlideTransition kivy.uix.screenmanager.SlideTransition
 
 <RootElement>:
     orientation: 'vertical'
@@ -17,8 +17,9 @@
         Button:
             text: 'Home'
             font_size: '20'
+            background_color: (0.5, 1, 0, 0.5)
             on_release:
-                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.transition = SlideTransition(duration=0.2)
                 root.ids.navigator.current = 'home'
             Image:
                 source: 'images/home.png'
@@ -27,8 +28,9 @@
         Button:
             text: 'Manual'
             font_size: '20'
+            background_color: (0.5, 1, 0, 0.5)
             on_release: 
-                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.transition = SlideTransition(duration=0.2)
                 root.ids.navigator.current = 'manual'
             Image:
                 source: 'images/hand.png'
@@ -37,8 +39,9 @@
         Button:
             text: 'Settings'
             font_size: '20'
+            background_color: (0.5, 1, 0, 0.5)
             on_release: 
-                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.transition = SlideTransition(duration=0.2)
                 root.ids.navigator.current = 'config'
             Image:
                 source: 'images/config.png'
@@ -47,8 +50,9 @@
         Button:
             text: 'Reports'
             font_size: '20'
+            background_color: (0.5, 1, 0, 0.5)
             on_release:
-                root.ids.navigator.transition = NoTransition()
+                root.ids.navigator.transition = SlideTransition(duration=0.2)
                 root.ids.navigator.current = 'reports'
             Image:
                 source: 'images/report.png'
@@ -59,7 +63,7 @@
     BoxLayout:
         canvas.before:
             Color:
-                rgba: 0, 0.5, 0, 0.5
+                rgba: 0, 0, 0.5, 0.5
             Rectangle:
                 pos:self.pos
                 size:self.size
@@ -69,6 +73,14 @@
             font_size: '40sp'
             bold:  True
             color: [0,1.0,0,1.0]
+        Button:
+            text: 'Print'
+            size_hint_x: None
+            size_hint_y: None
+            width: 60
+            height: 60
+            pos: (50, self.y)
+            on_release: root.printMsg()
 
 <Manual>:
     BoxLayout:
@@ -89,7 +101,7 @@
     BoxLayout:
         canvas.before:
             Color:
-                rgba: 0.5, 0, 0, 0.5
+                rgba: 0, 0, 0.5, 0.5
             Rectangle:
                 pos:self.pos
                 size:self.size
@@ -104,7 +116,7 @@
     BoxLayout:
         canvas.before:
             Color:
-                rgba: 0.5, 0, 0.5, 0.5
+                rgba: 0, 0, 0.5, 0.5
             Rectangle:
                 pos:self.pos
                 size:self.size
